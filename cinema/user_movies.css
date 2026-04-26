@@ -1,0 +1,204 @@
+
+/* TITLES */
+.section-title {
+    color: #ffcc00;
+    margin: 20px 0 10px;
+}
+
+/* ===== NOW SHOWING ===== */
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.movie-card {
+    width: 300px;
+    flex: 0 0 300px;
+
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.03);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.movie-card .info {
+    padding: 12px;
+}
+
+.movie-card h3 {
+    color: #ffcc00;
+    margin-bottom: 8px;
+}
+
+.movie-card p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.movie-card .price {
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.movie-card button {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ===== SCHEDULED ===== */
+.scheduled-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.scheduled-card {
+    width: 160px;
+    flex: 0 0 160px;
+
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.scheduled-card:hover {
+    transform: scale(1.03);
+}
+
+.scheduled-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.scheduled-card .info {
+    padding: 10px;
+}
+
+.scheduled-card h4 {
+    color: #ffcc00;
+    font-size: 14px;
+}
+
+.scheduled-card small {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.scheduled-card .price {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(4px);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #111, #1a1a1a);
+    border: 1px solid rgba(255, 204, 0, 0.15);
+    border-radius: 12px;
+
+    width: 450px;
+    max-width: 90%;
+
+    padding: 20px;
+    color: white;
+
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* CLOSE BUTTON */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #ffcc00;
+}
+
+/* POSTER */
+.modal-content img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* TITLE */
+#modalTitle {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+/* DESCRIPTION */
+#modalDesc {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 10px;
+}
+
+/* PRICE */
+.modal-content .price {
+    color: #ffcc00;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* DATE */
+#modalDate {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+/* BUTTON */
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background: #800020;
+    border: none;
+    color: #ffcc00;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:hover {
+    background: #a00028;
+}

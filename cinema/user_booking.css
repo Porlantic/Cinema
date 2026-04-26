@@ -1,0 +1,76 @@
+.section-title {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+/* LIST WRAPPER */
+.booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* CARD */
+.booking-card {
+    display: flex;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    gap: 15px;
+    align-items: center;
+}
+
+/* POSTER */
+.booking-poster {
+    width: 90px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* INFO */
+.booking-info {
+    flex: 1;
+}
+
+.booking-info h3 {
+    color: #ffcc00;
+    margin-bottom: 5px;
+}
+
+.booking-info p {
+    font-size: 13px;
+    margin: 2px 0;
+    opacity: 0.9;
+}
+
+.date {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+/* STATUS BADGE */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.status.PAID {
+    background: #2ecc71;
+    color: #000;
+}
+
+.status.PENDING {
+    background: #f1c40f;
+    color: #000;
+}
+
+.status.CANCELLED {
+    background: #e74c3c;
+    color: #fff;
+}

@@ -1,0 +1,102 @@
+/* =========================
+   USERS TABLE (MATCH BOOKINGS STYLE)
+========================= */
+
+.user-table {
+    margin-top: 20px;
+    background: white;
+    border-radius: 14px;
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.user-table table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+/* HEADER */
+.user-table th {
+    background: #800020;
+    color: white;
+    padding: 14px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* CELLS */
+.user-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* ROW HOVER */
+.user-table tr:hover {
+    background: #f9f9f9;
+}
+
+/* STATUS BADGES */
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.banned {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* ROLE BADGES */
+.role.admin {
+    color: #800020;
+    font-weight: bold;
+}
+
+.role.user {
+    color: #555;
+}
+
+/* ACTION BUTTONS */
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-ban {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-ban:hover {
+    background: #b52a37;
+}
+
+.btn-unban {
+    background: #28a745;
+    color: white;
+}
+
+.btn-unban:hover {
+    background: #1f7d34;
+}
+
+/* EMPTY ROW */
+.user-table td[colspan] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
