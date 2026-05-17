@@ -1,0 +1,482 @@
+body{
+    background:#141414;
+    color:white;
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    text-align:center;
+    padding:30px;
+    -webkit-font-smoothing:antialiased;
+}
+
+.screen{
+    width:60%;
+    margin:30px auto;
+    text-align:center;
+    background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.5));
+    color:#141414;
+    padding:12px;
+    border-radius:100px;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transform:perspective(500px) rotateX(-30deg);
+    box-shadow:0 10px 60px rgba(255,255,255,0.15);
+}
+
+.seat-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    margin-top:40px;
+}
+
+.seat-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    transition:0.3s;
+    position:relative;
+    margin: 0 auto;
+}
+
+/* V-shape styling for each row - E is front (narrow), A is back (wide) */
+.row-A {
+    width: 100%;
+    max-width: 600px;
+}
+
+.row-B {
+    width: 95%;
+    max-width: 570px;
+}
+
+.row-C {
+    width: 90%;
+    max-width: 540px;
+}
+
+.row-D {
+    width: 85%;
+    max-width: 510px;
+}
+
+.row-E {
+    width: 80%;
+    max-width: 480px;
+}
+
+.row-label{
+    width:30px;
+    color:#fff;
+    font-weight:bold;
+    margin-right:10px;
+}
+.aisle{
+    width:35px;
+}
+
+
+
+.seat-group{
+    display:flex;
+    gap:10px;
+}
+
+.walkway{
+    width:40px;
+}
+
+.seat{
+    width:55px !important;
+    height:40px !important;
+    min-width:55px !important;
+    max-width:55px !important;
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:6px 6px 3px 3px;
+    background:#252525;
+    color:rgba(255,255,255,0.7);
+    cursor:pointer;
+    font-size:11px;
+    font-weight:600;
+    transition:all 0.2s ease;
+    white-space: nowrap;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box !important;
+}
+
+.seat span{
+    font-size:11px;
+    font-weight:bold;
+}
+
+.seat:hover{
+    background:#333;
+    box-shadow:0 0 15px rgba(229,9,20,0.3);
+    border-color:rgba(229,9,20,0.3);
+}
+
+.seat.selected{
+    background:#e50914;
+    border-color:#e50914;
+    color:#fff;
+    box-shadow:0 0 12px rgba(229,9,20,0.4);
+}
+
+.seat.booked,
+.seat:disabled{
+    background:#1a1a1a !important;
+    color:rgba(255,255,255,0.15) !important;
+    cursor:not-allowed !important;
+    opacity:0.4 !important;
+    pointer-events:none !important;
+    border-color:transparent !important;
+}
+
+.seat.booked:hover,
+.seat:disabled:hover{
+    box-shadow:none !important;
+}
+
+.confirm{
+    padding:12px 28px;
+    border:none;
+    border-radius:4px;
+    background:#e50914;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    letter-spacing:0.5px;
+    transition:all 0.2s ease;
+}
+
+.confirm:hover{
+    background:#f40612;
+    box-shadow:0 4px 15px rgba(229,9,20,0.4);
+    transform:translateY(-1px);
+}
+.seat-legend{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin:25px 0;
+    color:rgba(255,255,255,0.6);
+    font-size:13px;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.legend-box{
+    width:16px;
+    height:16px;
+    border-radius:4px;
+}
+
+.available{
+    background:#252525;
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+.selected-box{
+    background:#e50914;
+}
+
+.booked-box{
+    background:#1a1a1a;
+    opacity:0.5;
+}
+.confirm:disabled{
+    opacity:0.5;
+    cursor:not-allowed;
+}
+.movie-booking-header{
+    width:90%;
+    max-width:1200px;
+    margin:20px auto 30px;
+    background:#1a1a1a;
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:8px;
+    padding:25px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.3);
+}
+
+.movie-title{
+    text-align:center;
+    font-size:28px;
+    margin-bottom:20px;
+    color:white;
+    font-weight:700;
+}
+
+.movie-booking-info{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.booking-detail{
+    min-width:220px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:6px;
+    padding:18px;
+    text-align:center;
+}
+
+.booking-detail .label{
+    display:block;
+    font-size:11px;
+    color:rgba(255,255,255,0.4);
+    margin-bottom:8px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-weight:500;
+}
+
+.booking-detail .value{
+    font-size:18px;
+    font-weight:700;
+    color:white;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+.modal-content {
+    background: #1e1e2f; /* dark cinema style */
+    color: #ffffff;
+    width: 420px;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+.modal-content p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+.modal-content button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.modal-content button:first-of-type {
+    background: #28a745;
+    color: white;
+}
+.modal-content button:last-of-type {
+    background: #dc3545;
+    color: white;
+}
+.modal-content {
+    animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ACTION BUTTONS */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+}
+
+/* PAYMENT MODAL STYLES */
+.payment-modal {
+    max-width: 500px;
+}
+
+.booking-summary {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.booking-summary p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.payment-method-section {
+    margin-bottom: 20px;
+}
+
+.payment-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+}
+
+.payment-options {
+    display: flex;
+    gap: 15px;
+}
+
+.payment-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.payment-option input[type="radio"] {
+    accent-color: #e50914;
+}
+
+.payment-icon {
+    font-size: 20px;
+}
+
+.payment-fields {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.form-group select option {
+    color: black;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #e50914;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-pay {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn-pay:hover {
+    background: #f40612;
+    box-shadow: 0 4px 15px rgba(229,9,20,0.4);
+}
+
+.btn-cancel {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background: rgba(255,255,255,0.2);
+}

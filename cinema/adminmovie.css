@@ -1,0 +1,859 @@
+/* =========================
+   MOVIE TABS STYLES
+========================= */
+
+.movie-tabs {
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab-nav {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: #800020;
+    background: rgba(128, 0, 32, 0.05);
+}
+
+.tab-btn.active {
+    color: #800020;
+    background: white;
+    border-bottom: 3px solid #800020;
+}
+
+/* =========================
+   MOVIE GRID / CARDS (SMALLER)
+========================= */
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    padding: 15px;
+}
+
+.movie-card {
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    height: 360px;   /* FIXED HEIGHT */
+    color: #fff;
+}
+
+.movie-card:hover {
+    transform: translateY(-4px);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-info h4 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.movie-info small {
+    font-size: 0.75rem;
+    color: #ccc;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.movie-price {
+    font-weight: bold;
+    color: #800020;
+    margin-top: 5px;
+}
+.movie-description {
+    max-height: 60px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* limit lines */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.movie-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.movie-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   ACTION BUTTONS (SMALL)
+========================= */
+
+.movie-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background: #007bff;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #0056b3;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #a71d2a;
+}
+
+/* =========================
+   BUTTON PRIMARY
+========================= */
+
+.btn-primary {
+    background: #800020;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #600018;
+}
+
+
+/* =========================
+   MODAL BACKDROP
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    padding: 40px 15px;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    justify-content: center;
+    align-items: flex-start;
+
+    overflow-y: auto;
+}
+/* =========================
+   VIEW MOVIE MODAL (CUSTOM FIX)
+========================= */
+
+#viewMovieModal .modal-content {
+    background: #111;       /* dark background */
+    color: #fff;            /* white text */
+    width: 400px;
+}
+
+.view-body p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.view-body strong {
+    color: #ffcc00; /* highlight labels */
+}
+/* =========================
+   MODAL CONTAINER (ROUNDED + NO OVERFLOW BUG)
+========================= */
+
+.modal-content {
+    background: linear-gradient(145deg, #ffffff, #fff5f7);
+
+    width: 450px;
+    max-width: 95%;
+    margin-top: 40px;
+
+    border: 2px solid #800020;
+    border-radius: 22px; /* BIGGER ROUNDNESS */
+
+    box-shadow: 0 15px 40px rgba(128, 0, 32, 0.35);
+
+    animation: fadeIn 0.25s ease;
+
+    /* IMPORTANT: prevents scroll bleeding outside rounded edges */
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    max-height: 85vh;
+}
+
+/* =========================
+   SCROLL AREA (INSIDE MODAL ONLY)
+========================= */
+
+.modal-content form {
+    overflow-y: auto;
+    padding: 20px 25px 25px 25px;
+
+    /* ensures internal scroll only */
+    max-height: 100%;
+}
+
+/* =========================
+   MODAL HEADER (ROUNDED TOP FEEL)
+========================= */
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 25px;
+    margin: 0;
+
+    border-bottom: 2px solid #800020;
+
+    background: #fff5f7;
+
+    /* smooth top corners */
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #800020;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #800020;
+    transition: 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+}
+
+/* =========================
+   INPUTS (UNCHANGED STYLE BUT CLEANER FEEL)
+========================= */
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 12px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    background: #f8f8f8;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.modal-content textarea {
+    border-radius: 18px;
+    min-height: 90px;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+    outline: none;
+    border-color: #800020;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(128, 0, 32, 0.12);
+}
+
+/* =========================
+   ACTION BUTTON AREA (FIXED BOTTOM LOOK)
+========================= */
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* SAVE BUTTON */
+.modal-actions button[type="submit"] {
+    flex: 1;
+    background: #800020;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-actions button[type="submit"]:hover {
+    background: #600018;
+    transform: translateY(-2px);
+}
+
+/* CANCEL BUTTON */
+.modal-actions button[type="button"] {
+    flex: 1;
+    background: transparent;
+    color: #800020;
+    border: 2px solid #800020;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-actions button[type="button"]:hover {
+    background: #800020;
+    color: white;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.price-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.peso-sign {
+    position: absolute;
+    left: 18px;
+    top: 37%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    color: #800020;
+    pointer-events: none;
+}
+
+.price-wrapper input {
+    padding-left: 32px;
+
+}
+/* =========================
+   TAB VISIBILITY FIX
+========================= */
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+.movie-title-main {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #800020;
+    margin-bottom: 6px;
+}
+.movie-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #800020;
+    margin: 8px 0;
+}
+/*  genre */
+.genre-box {
+    min-height: 40px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+}
+
+.placeholder {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.genre-controls {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.genre-controls select {
+    flex: 1;
+}
+.genre-settings {
+    background: #800020;
+    color: #ffcc00;
+    border-radius: 50px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    top: 50%;
+    position: relative;
+}
+
+.genre-tag {
+    background: #800020;
+    color: #ffcc00;
+    padding: 4px 10px;
+    border-radius: 20px; /* pill style */
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.genre-tag span {
+    margin-left: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#genreDropdown {
+  background-color: white;
+  color: Black;
+  padding: 1%;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 16px;
+}   
+/* /genre modal */
+.genre-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 6px 10px;
+    margin: 5px 0;
+
+    background: #800020;
+    color: #ffcc00;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+}
+
+.genre-item button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.genre-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.genre-modal.show {
+    display: flex;
+}
+.genre-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    background: #fff;
+}
+.genre-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 6px 10px;
+    margin: 4px 0;
+
+    background: #800020;
+    color: #ffcc00;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+}
+
+.genre-item-name {
+    flex: 1;
+}
+
+.genre-item-delete {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+.genre-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.genre-modal.show {
+    display: flex;
+}
+
+
+/* GENRE ADD CONTAINER */
+.genre-add-container {
+    border-top: 2px solid #e0e0e0;
+    padding-top: 20px;
+}
+
+.genre-add-container h3 {
+    color: #800020;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #800020;
+}
+
+.genre-add-container input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.genre-add-container input:focus {
+    outline: none;
+    border-color: #800020;
+    box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.1);
+    background-color: #fff;
+}
+
+.genre-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.genre-actions button {
+    background: #800020;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.genre-actions button:hover {
+    background: #600018;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.3);
+}
+
+.genre-actions button:last-child {
+    background: #f8f8f8;
+    color: #666;
+    border: 2px solid #e0e0e0;
+}
+/* file*/
+input[type="file"] {
+  color: black;
+}
+
+/* ================= GEAR BUTTON ================= */
+.movie-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.gear-btn {
+    background: #800020;
+    color: #ffcc00;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gear-btn:hover {
+    background: #600018;
+    transform: rotate(90deg);
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.3);
+}
+
+/* ================= GENRE MODAL ================= */
+.genre-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
+
+.genre-modal.show {
+    display: flex;
+}
+
+.genre-modal .modal-content {
+    background: #fff;
+    border: 2px solid #800020;
+    border-radius: 16px;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(128, 0, 32, 0.3);
+}
+
+.genre-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid #800020;
+}
+
+.genre-modal .modal-header h2 {
+    color: #800020;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.genre-modal .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #800020;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.genre-modal .close-btn:hover {
+    background: rgba(128, 0, 32, 0.1);
+}
+
+.genre-modal .modal-body {
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+/* ================= GENRE CONTAINERS ================= */
+.genre-container {
+    flex: 1;
+}
+
+.genre-container h3 {
+    color: #800020;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #800020;
+}
+
+.genre-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 15px;
+    background: #f8f8f8;
+}
+
+.genre-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.genre-item:hover {
+    box-shadow: 0 2px 8px rgba(128, 0, 32, 0.1);
+}
+
+.genre-item-name {
+    color: #800020;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.genre-item-delete {
+    background: #800020;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.genre-item-delete:hover {
+    background: #600018;
+    transform: translateY(-1px);
+}
+
+/* ================= ADD GENRE FORM ================= */
+.add-genre-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.add-genre-form input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.add-genre-form input:focus {
+    outline: none;
+    border-color: #800020;
+    box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.1);
+    background-color: #fff;
+}
+
+.add-genre-form button {
+    background: #800020;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.add-genre-form button:hover {
+    background: #600018;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.3);
+}   
+
+/* genre chip container */
+.genre-chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #f9f9f9;
+}

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 64px;
+    --red-primary: #e50914;
+    --red-dark: #831010;
+    --gold: #e5c07b;
+    --bg-dark: #141414;
+    --bg-darker: #0a0a0a;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-darker);
+    height: 100vh;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+.main-header {
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0 40px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.3s ease;
+}
+
+.header-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section .logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--red-primary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.auth-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.auth-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.auth-btn:hover {
+    background: var(--red-primary);
+    color: #fff;
+    border-color: var(--red-primary);
+}
+
+.auth-btn:last-child {
+    background: var(--red-primary);
+    color: white;
+    border-color: var(--red-primary);
+}
+
+.auth-btn:last-child:hover {
+    background: #f40612;
+    box-shadow: 0 0 20px rgba(229,9,20,0.4);
+}
+
+/* MAIN AREA */
+.main-content {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    overflow: hidden;
+}

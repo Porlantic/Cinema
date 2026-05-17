@@ -1,0 +1,205 @@
+
+.booking-list {
+    margin-top: 20px;
+}
+
+.no-bookings {
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.table-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a1a;
+}
+
+.booking-table th {
+    background: rgba(229,9,20,0.12);
+    color: rgba(255,255,255,0.6);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    white-space: nowrap;
+}
+
+.booking-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.booking-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.booking-table tbody tr:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+.booking-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* CELL SPECIFIC */
+.td-id {
+    color: rgba(255,255,255,0.35);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.td-movie {
+    font-weight: 600;
+    color: #fff;
+}
+
+.td-schedule {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.schedule-time {
+    color: #e50914;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+.td-seats {
+    font-size: 12px;
+    max-width: 150px;
+}
+
+.td-price {
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.td-date {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    white-space: nowrap;
+}
+
+.text-muted {
+    color: rgba(255,255,255,0.25);
+}
+
+/* PAYMENT BADGE */
+.payment-badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.6);
+    white-space: nowrap;
+}
+
+.payment-badge.card {
+    background: rgba(66,133,244,0.12);
+    color: #64b5f6;
+}
+
+.payment-badge.gcash {
+    background: rgba(0,123,255,0.12);
+    color: #42a5f5;
+}
+
+/* STATUS */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status.completed {
+    background: rgba(76, 175, 80, 0.12);
+    color: #4caf50;
+}
+
+.status.paid {
+    background: rgba(76, 175, 80, 0.12);
+    color: #4caf50;
+}
+
+.status.pending {
+    background: rgba(255, 193, 7, 0.12);
+    color: #ffc107;
+}
+
+.status.cancelled,
+.status.failed {
+    background: rgba(229, 9, 20, 0.12);
+    color: #ef5350;
+}
+
+.status.refunded {
+    background: rgba(255, 193, 7, 0.12);
+    color: #ffc107;
+}
+
+/* TICKET BUTTON */
+.td-action {
+    white-space: nowrap;
+}
+
+.ticket-btn {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(229,9,20,0.12);
+    color: #e50914;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+}
+
+.ticket-btn:hover {
+    background: #e50914;
+    color: #fff;
+}
+
+.refund-btn {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(255,193,7,0.12);
+    color: #ffc107;
+    border: none;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+    margin-left: 6px;
+}
+
+.refund-btn:hover {
+    background: #ffc107;
+    color: #000;
+}
